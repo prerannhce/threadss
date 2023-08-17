@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from thread.views import home_view
+from thread.views import dynamic_view
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', home_view),
+    path('tweets/<int:id>', dynamic_view)
+
 ]
